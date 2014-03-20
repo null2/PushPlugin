@@ -76,7 +76,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 				extras.putBoolean("foreground", false);
 
                 // Send a notification if there is a message
-                if (extras.getString("message") != null && extras.getString("message").length() != 0) {
+                if (extras.getString("default") != null && extras.getString("default").length() != 0) {
                     createNotification(context, extras);
                 }
             }
@@ -103,7 +103,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 				.setTicker(extras.getString("title"))
 				.setContentIntent(contentIntent);
 
-		String message = extras.getString("message");
+		String message = extras.getString("default");
 		if (message != null) {
 			mBuilder.setContentText(message);
 		} else {
