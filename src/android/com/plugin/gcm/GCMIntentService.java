@@ -74,12 +74,12 @@ public class GCMIntentService extends GCMBaseIntentService {
 			}
 			else {
 				extras.putBoolean("foreground", false);
+            }
 
-                // Send a notification if there is a message
-                if ((extras.getString("message") != null && extras.getString("message").length() != 0) ||
-                    (extras.getString("default") != null && extras.getString("default").length() != 0)) {
-                    createNotification(context, extras);
-                }
+            // Send a notification if there is a message
+            if ((extras.getString("message") != null && extras.getString("message").length() != 0) ||
+                (extras.getString("default") != null && extras.getString("default").length() != 0)) {
+                createNotification(context, extras);
             }
         }
 	}
